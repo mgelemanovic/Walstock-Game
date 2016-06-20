@@ -2,13 +2,13 @@
 #define WALSTOCK_INPUT_H
 
 #include <GLFW\glfw3.h>
+#include <vector>
 
-class InputManager {
-public:
-	static void handleInput(GLFWwindow* window, int key, int scancode, int action, int mode) {
-		if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-			glfwSetWindowShouldClose(window, GL_TRUE);
-	}
-};
+std::vector<int> pressedKeys;
+
+void InputManager(GLFWwindow* window, int key, int scancode, int action, int mode) {
+	if (action == GLFW_PRESS)
+		pressedKeys.push_back(key);
+}
 
 #endif
