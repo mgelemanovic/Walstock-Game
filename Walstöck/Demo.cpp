@@ -1,12 +1,10 @@
 #include "Window.h"
 #include "Shader.h"
 #include "Input.h"
-#include "Buffer.h"
 
 int main() {
-	Window main("Walstock", InputManager::handleInput);
+	Window main("Walstock", InputManager::handleInput, 1200, 675);
 	Shader s("vertex.glsl", "fragment.glsl");
-	Buffer data;
 
 	main.gameLoop();
 
